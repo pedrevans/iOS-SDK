@@ -30,11 +30,11 @@
 		95A43D771940CDDB004D81E3 /* ESTCloudBeaconTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A43D761940CDDB004D81E3 /* ESTCloudBeaconTableVC.m */; };
 		95B084531AA9229D007EA98D /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D588B51AA70CFB0093D178 /* EstimoteSDK.framework */; };
 		95C7C3501941BAA300D9BF17 /* ESTCloudBeaconTableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95C7C34F1941BAA300D9BF17 /* ESTCloudBeaconTableVC.xib */; };
-		95CBE8E21BBE823800112BB0 /* ESTNearableDetailsDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CBE8DD1BBE823800112BB0 /* ESTNearableDetailsDemoVC.m */; settings = {ASSET_TAGS = (); }; };
-		95CBE8E31BBE823800112BB0 /* ESTNearableDetailsDemoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CBE8DE1BBE823800112BB0 /* ESTNearableDetailsDemoVC.xib */; settings = {ASSET_TAGS = (); }; };
-		95CBE8E41BBE823800112BB0 /* ESTNearableFirmwareUpdateDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CBE8E01BBE823800112BB0 /* ESTNearableFirmwareUpdateDemoVC.m */; settings = {ASSET_TAGS = (); }; };
-		95CBE8E51BBE823800112BB0 /* ESTNearableFirmwareUpdateDemoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CBE8E11BBE823800112BB0 /* ESTNearableFirmwareUpdateDemoVC.xib */; settings = {ASSET_TAGS = (); }; };
-		95CBE8E81BBE826300112BB0 /* ESTNearableTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CBE8E71BBE826300112BB0 /* ESTNearableTableVC.m */; settings = {ASSET_TAGS = (); }; };
+		95CBE8E21BBE823800112BB0 /* ESTNearableDetailsDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CBE8DD1BBE823800112BB0 /* ESTNearableDetailsDemoVC.m */; };
+		95CBE8E31BBE823800112BB0 /* ESTNearableDetailsDemoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CBE8DE1BBE823800112BB0 /* ESTNearableDetailsDemoVC.xib */; };
+		95CBE8E41BBE823800112BB0 /* ESTNearableFirmwareUpdateDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CBE8E01BBE823800112BB0 /* ESTNearableFirmwareUpdateDemoVC.m */; };
+		95CBE8E51BBE823800112BB0 /* ESTNearableFirmwareUpdateDemoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CBE8E11BBE823800112BB0 /* ESTNearableFirmwareUpdateDemoVC.xib */; };
+		95CBE8E81BBE826300112BB0 /* ESTNearableTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CBE8E71BBE826300112BB0 /* ESTNearableTableVC.m */; };
 		A12D28DB18E9638100872A95 /* ESTUpdateFirmwareDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A12D28D918E9638100872A95 /* ESTUpdateFirmwareDemoVC.m */; };
 		A12D28DC18E9638100872A95 /* ESTUpdateFirmwareDemoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12D28DA18E9638100872A95 /* ESTUpdateFirmwareDemoVC.xib */; };
 		AC39C3BE18D72A6F00B38212 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC39C3BD18D72A6F00B38212 /* Foundation.framework */; };
@@ -281,6 +281,7 @@
 				ORGANIZATIONNAME = com.estimote;
 				TargetAttributes = {
 					AC39C3B918D72A6F00B38212 = {
+						DevelopmentTeam = AN5Z26BY6G;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -454,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../EstimoteSDK,
@@ -469,7 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.estimote.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appmotivate.estimote.Examples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -482,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../EstimoteSDK,
@@ -497,7 +500,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.estimote.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appmotivate.estimote.Examples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

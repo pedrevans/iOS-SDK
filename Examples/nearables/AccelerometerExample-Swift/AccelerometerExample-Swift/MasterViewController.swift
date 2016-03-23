@@ -12,14 +12,32 @@ class MasterViewController: UITableViewController, ESTNearableManagerDelegate {
     
     var nearables:Array<ESTNearable>!
     var nearableManager:ESTNearableManager!
-    
+    var knownBeacons = Set<String>()
+    init() {
+        super.init(style: .Plain)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        NSLog("init(coder:)")
+        super.init(coder: aDecoder)
+        knownBeacons.insert("2d3f05974632c4bb")
+        knownBeacons.insert("def")
+    }
+    // Need this to prevent runtime error:
+    // fatal error: use of unimplemented initializer 'init(nibName:bundle:)'
+    // for class 'TestViewController'
+    // I made this private since users should use the no-argument constructor.
+    private override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        NSLog("init(nibName:)")
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("yes I am alive")
         
         nearables = []
         nearableManager = ESTNearableManager()
         nearableManager.delegate = self
-        nearableManager .startRangingForType(ESTNearableType.All)
+        nearableManager.startRangingForType(ESTNearableType.All)
     }
     
     // MARK: - Segues
@@ -49,14 +67,18 @@ class MasterViewController: UITableViewController, ESTNearableManagerDelegate {
         let nearable = nearables[indexPath.row] as ESTNearable
         cell.textLabel?.text = ESTNearableDefinitions.nameForType(nearable.type)
         cell.detailTextLabel!.text = nearable.identifier
+        if knownBeacons.contains(nearable.identifier) {
+            cell.contentView.backgroundColor = UIColor.greenColor()
+        } else {
+            cell.contentView.backgroundColor = UIColor.whiteColor()
+        }
         return cell
     }
     
     // MARK: - ESTNearableManager delegate
-    
-    func nearableManager(manager: ESTNearableManager!, _didRangeNearables nearables: [AnyObject]!, withType type: ESTNearableType) {
-        
-        self.nearables = nearables as! Array<ESTNearable>
+
+    func nearableManager(manager: ESTNearableManager, didRangeNearables nearables: [ESTNearable], withType type: ESTNearableType) {
+        self.nearables = nearables
         tableView.reloadData()
     }
 }
